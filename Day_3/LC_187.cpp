@@ -10,7 +10,9 @@ public:
         if(n<=10) return ans;
         unordered_map<string,int> mp;
         for(int i=0;i<n;i++) mp[s.substr(i,10)]++;
-        for(auto [str,freq] : mp){
+        for(pair<string,int> it : mp){
+            string str = it.first;
+            int freq = it.second;
             cout<<str<<" "<<freq<<endl;
             if(freq > 1) ans.push_back(str);
         }
